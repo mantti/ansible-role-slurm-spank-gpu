@@ -1,0 +1,12 @@
+---
+# tasks file for ansible-role-slurm-slurm-spank-gpu
+
+- name: Make sure all needed packages are installed
+  package: 
+    name: "{{ slurm_spank_gpu_dependencies }}"
+    state: present
+      
+- name: Install Self-builded spank-lua plugin
+  package:
+    name: "{{ slurm_spank_lua_plugin }}"
+    state: present
