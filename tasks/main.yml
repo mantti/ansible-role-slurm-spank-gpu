@@ -6,7 +6,14 @@
     name: "{{ slurm_spank_gpu_dependencies }}"
     state: present
       
+- name: Let's copy local rpm to client
+  copy:
+    src: "files/{{ slurm_spank_lua_plugin }}" 
+    mode: 0644
+    dest: /tmp
+  notify: remove local rpm
+
 - name: Install Self-builded spank-lua plugin
   package:
-    name: "{{ slurm_spank_lua_plugin }}"
+    name: "/tmp/{{ slurm_spank_lua_plugin }}"
     state: present
