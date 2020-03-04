@@ -17,3 +17,9 @@
   package:
     name: "/tmp/{{ slurm_spank_lua_plugin }}"
     state: present
+
+- name: Let's place new spank-module in-place
+  copy: 
+    src: "files/{{ slurm_gpu_spank_plugin }}"
+    dest: /etc/slurm/lua.d
+  notify: restart slurmd
