@@ -1,0 +1,9 @@
+---
+
+  - name: restart slurmd
+    service: name=slurmd state=restarted
+
+  - name: remove local rpm
+    file: 
+      path: "/tmp/{{ slurm_spank_lua_plugin }}"
+      state: absent
