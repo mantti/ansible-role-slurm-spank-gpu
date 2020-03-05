@@ -1,5 +1,5 @@
 ---
 # defaults file for ansible-role-slurm-slurm-spank-gpu
-slurm_spank_gpu_dependencies: lua 
+slurm_spank_gpu_dependencies: lua-devel
 slurm_spank_lua_plugin: slurm-spank-lua-0.39-1.x86_64.rpm
 slurm_gpu_spank_plugin: gpu_cmode.lua
